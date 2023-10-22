@@ -5,9 +5,40 @@ return {
     "williamboman/mason-lspconfig.nvim",
     -- overrides `require("mason-lspconfig").setup(...)`
     opts = function(_, opts)
-      -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
-        -- "lua_ls",
+        "lua_ls",
+        "bashls",
+        "dockerls",
+        "docker_compose_language_service",
+        "clangd",
+        "sqlls",
+        "yamlls",
+
+        -- web
+        "cssls",
+        "graphql",
+        "html",
+        "jsonls",
+        "tsserver",
+        "tailwindcss",
+
+        -- go
+        "gopls",
+        "glint",
+        "go-debug-adapter",
+        "goimports",
+        "goimports-reviser",
+        "golangci-lint",
+        "golangci-lint-langserver",
+        "golines",
+        "gotests",
+        "gotestsum",
+
+        -- python
+        "pyright",
+
+        -- misc
+        "marksman",
       })
     end,
   },
@@ -18,8 +49,8 @@ return {
     opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
-        -- "prettier",
-        -- "stylua",
+        "prettier",
+        "stylua",
       })
     end,
   },
@@ -29,7 +60,7 @@ return {
     opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
-        -- "python",
+        "python",
       })
     end,
   },
