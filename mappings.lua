@@ -6,17 +6,31 @@
 return {
   -- first key is the mode
   n = {
-    -- second key is the lefthand side of the map
+    [";"] = { ":", desc = "enter command mode" },
+
+    -- half page jump
+    ["<C-d>"] = { "<C-d>zz" },
+    ["<C-u>"] = { "<C-u>zz" },
+
+    -- JJ simply
+    ["J"] = { "mzJ`z" },
+
+    -- keep cursor in middle while searching
+    ["n"] = { "nzzzv" },
+    ["N"] = { "Nzzzv"  },
+
+    -- replace word under cursor
+    ["<leader>s"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], desc = "replace word under cursor" },
 
     -- navigate buffer tabs with `H` and `L`
-    -- L = {
-    --   function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
-    --   desc = "Next buffer",
-    -- },
-    -- H = {
-    --   function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
-    --   desc = "Previous buffer",
-    -- },
+    L = {
+      function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+      desc = "Next buffer",
+    },
+    H = {
+      function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+      desc = "Previous buffer",
+    },
 
     -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {
@@ -36,5 +50,16 @@ return {
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
+  },
+  v = {
+    -- move lines
+    ["J"] = { ":m '>+1<CR>gv=gv" },
+    ["K"] = { ":m '<-2<CR>gv=gv" },
+
+    -- yank into system clipboard
+    -- ["<leader>y"] = { [["+y]] },
+  },
+  i = {
+    -- ["<C-/>"] = { "<C-o>j" },
   },
 }
