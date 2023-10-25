@@ -3,16 +3,13 @@ return {
   -- Add plugins, the lazy syntax
   "andweeb/presence.nvim",
   {
-    "ayu-theme/ayu-vim",
+    "laytan/cloak.nvim",
+    lazy = false,
     config = function()
-      ayucolor="dark"
+      require("cloak").setup {
+        enabled = true,
+      }
+      vim.keymap.set("n", "<C-/>", "<cmd> CloakToggle <CR>")
     end,
-  }
-  -- {
-  --   "ray-x/lsp_signature.nvim",
-  --   event = "BufRead",
-  --   config = function()
-  --     require("lsp_signature").setup()
-  --   end,
-  -- },
+  },
 }
