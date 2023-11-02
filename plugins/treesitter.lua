@@ -19,8 +19,13 @@ return {
 
       -- python stuff
       "python",
+      "ruff",
+      "black",
+      "pyright",
+      "flake8",
 
       -- misc
+      "jq",
       "go",
       "json",
       "json5",
