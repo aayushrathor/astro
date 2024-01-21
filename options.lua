@@ -2,16 +2,42 @@
 return {
   opt = {
     -- set to true or false etc.
-    relativenumber = true, -- sets vim.opt.relativenumber
-    number = true, -- sets vim.opt.number
     spell = false, -- sets vim.opt.spell
-    signcolumn = "auto", -- sets vim.opt.signcolumn to auto
-    wrap = false, -- sets vim.opt.wrap
-    smartcase = true,                        -- smart case
-    smartindent = true,                      -- make indenting smarter again
-    scrolloff = 8,
+    smartindent = true, -- make indenting smarter again
     sidescrolloff = 8,
     guifont = "Lig Operator Mono:h12",
+
+    -- indentation
+    tabstop = 2,
+    softtabstop = 2,
+    shiftwidth = 2,
+
+    -- search and replace
+    ignorecase = true,
+    smartcase = true,
+    hlsearch = false,
+    incsearch = true,
+    gdefault = true,
+
+    -- user interface,
+    number = true,
+    relativenumber = true,
+    wrap = false,
+    termguicolors = true,
+    scrolloff = 8,
+    signcolumn = "yes",
+    cursorline = false,
+
+    -- file management,
+    swapfile = false,
+    backup = false,
+    undofile = true,
+    autoread = true,
+    autowrite = true,
+    hidden = true,
+
+    -- use system clipboard,
+    clipboard = "unnamedplus",
   },
   g = {
     mapleader = " ", -- sets vim.g.mapleader
