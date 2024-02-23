@@ -17,7 +17,7 @@ return {
 
     -- keep cursor in middle while searching
     ["n"] = { "nzzzv" },
-    ["N"] = { "Nzzzv"  },
+    ["N"] = { "Nzzzv" },
 
     -- replace word under cursor
     ["<leader>s"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], desc = "replace word under cursor" },
@@ -44,6 +44,10 @@ return {
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
+
+    -- Cloak Toggle
+    ["<C-/>"] = { ":CloakToggle<CR>" },
+
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
