@@ -49,6 +49,11 @@ return {
     -- Cloak Toggle
     ["<C-/>"] = { ":CloakToggle<CR>" },
 
+    -- Markdown Preview
+    ["<C-m>"] = {
+      function() require("render-markdown").toggle() end,
+    },
+
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
